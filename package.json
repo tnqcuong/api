@@ -4,22 +4,22 @@
   "description": "API for family tree",
   "main": "dist",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
-    "build": "babel.src -s -D -d dist presets es2015,stage-0",
+    "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src/app.js --presets es2015,stage-0\"",
+    "build": "babel src -s -D -d dist --presets es2015,stage-0",
     "start": "NODE_ENV=production pm2 start dist",
     "prestart": "npm run -s build",
     "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "eslintConfig": {
-    "parserOptions":{
+    "parserOptions": {
       "ecmaVersion": 7,
       "sourceType": "module"
     },
-    "env":{
+    "env": {
       "node": true
     },
-    "rule": {
+    "rules": {
       "no-console": 0,
       "no-unused-vars": 1
     }
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-preset-es2015": "^6.24.1",
