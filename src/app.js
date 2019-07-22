@@ -14,7 +14,7 @@ app.server = http.createServer(app);
 app.use(bodyParser.json({
     limit: config.bodyLimit
 }));
-//passportt config
+//passport config
 
 //api routes v1
 app.use('/v1', routes);
