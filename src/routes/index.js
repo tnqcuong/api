@@ -4,6 +4,7 @@ import middleware from '../middleware';
 import initializeDb from '../db';
 import app from '../app';
 import restaurant from '../controller/restaurant';
+import foodtruck from '../controller/foodtruck';
 
 let router = express();
 
@@ -15,6 +16,9 @@ initializeDb(db => {
 
     //api route v1 (/v1)
     router.use('/restaurant', restaurant({ config, db}));
+
+    //api route v1 (/v1)
+    router.use('/foodtruck', foodtruck({ config, db}));
 
 });
 
